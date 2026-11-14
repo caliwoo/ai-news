@@ -42,4 +42,4 @@ hugo server -D
 
 The first published page is the 14 November 2026 launch edition. It lists the subscribed sources and does not invent news; regular digests begin with the next issues that arrive.
 
-Subscribed sources: The Deep View, The Rundown AI, AI for Work, Lenny's Newsletter, Superhuman AI, Superhuman Product Management, and The Code Cybersecurity.
+Subscribed sources: The Deep View, The Rundown AI, The Rundown Tech, The Rundown Robotics, AI for Work, Lenny's Newsletter, Superhuman AI, Superhuman Product Management, The Code Cybersecurity, Simple AI (Dharmesh Shah), and TLDR AI (pending confirmation).

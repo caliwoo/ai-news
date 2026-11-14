@@ -1,0 +1,7 @@
+{{ define "main" }}
+  {{ with (index .Pages.ByDate.Reverse 0) }}
+    {{ partial "digest.html" . }}
+  {{ else }}
+    <p class="empty">No editions have been published yet.</p>
+  {{ end }}
+{{ end }}

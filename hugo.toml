@@ -1,0 +1,20 @@
+baseURL = "https://caliwoo.github.io/ai-news/"
+locale = "en-US"
+title = "AI NEWS · Daily Digest"
+enableRobotsTXT = true
+canonifyURLs = true
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+enableGitInfo = false
+
+[pagination]
+  pagerSize = 1000
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  description = "Cali's weekday morning digest of AI newsletters, grouped by subject, with an audio edition when one is published."
+  audioBase = "https://caliwoo.github.io/cali-audio/ai-news/"
+
+[permalinks]
+  digest = "/:filename/"

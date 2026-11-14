@@ -1,0 +1,11 @@
+{{ $date := .Date.Format "2006-01-02" }}
+<article class="digest" data-date="{{ $date }}">
+  <header class="digest-head">
+    <p class="digest-date"><time datetime="{{ $date }}">{{ .Date.Format "Monday, January 2, 2006" }}</time></p>
+    <h1 class="digest-title">{{ .Title }}</h1>
+    {{ partial "audio.html" . }}
+  </header>
+  <div class="digest-body">
+    {{ .Content }}
+  </div>
+</article>

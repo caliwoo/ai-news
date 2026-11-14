@@ -1,0 +1,22 @@
+{{ $current := "" }}
+{{ if .IsHome }}
+  {{ with (index .Site.RegularPages.ByDate.Reverse 0) }}
+    {{ $current = .Date.Format "2006-01-02" }}
+  {{ end }}
+{{ else if eq .Section "digest" }}
+  {{ $current = .Date.Format "2006-01-02" }}
+{{ end }}
+<nav class="dateline" aria-label="Editions by date">
+  <p class="dateline-label">Editions</p>
+  <ul>
+    {{ range .Site.RegularPages.ByDate.Reverse }}
+      {{ $id := .Date.Format "2006-01-02" }}
+      <li>
+        <a href="{{ .RelPermalink }}"{{ if eq $id $current }} class="is-current" aria-current="page"{{ end }}>
+          <time datetime="{{ $id }}">{{ .Date.Format "Jan 2" }}</time>
+          <span class="dow">{{ .Date.Format "Mon" }}</span>
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>

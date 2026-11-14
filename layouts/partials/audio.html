@@ -1,0 +1,24 @@
+{{ $date := .Date.Format "2006-01-02" }}
+{{ $src := "" }}
+{{ with .Params.audio }}
+  {{ if eq (printf "%T" .) "string" }}
+    {{ $src = . }}
+  {{ else if . }}
+    {{ $src = printf "%sai-news-%s.mp3" $.Site.Params.audioBase $date }}
+  {{ end }}
+{{ end }}
+{{ if $src }}
+  <div class="listen">
+    <audio id="digest-audio-{{ $date }}" preload="none" src="{{ $src }}"></audio>
+    <button type="button" class="listen-btn" data-audio="digest-audio-{{ $date }}">
+      <span class="listen-icon" aria-hidden="true">
+        <svg class="icon-play" viewBox="0 0 24 24" width="18" height="18" focusable="false"><path fill="currentColor" d="M8 5.14v13.72L19.5 12 8 5.14z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" width="18" height="18" focusable="false"><path fill="currentColor" d="M7 5h3.5v14H7V5zm6.5 0H17v14h-3.5V5z"/></svg>
+      </span>
+      <span class="listen-copy">
+        <span class="listen-kicker">Audio summary</span>
+        <span class="listen-label">Play this edition</span>
+      </span>
+    </button>
+  </div>
+{{ end }}
